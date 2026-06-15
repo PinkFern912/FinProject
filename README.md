@@ -1,84 +1,89 @@
 # FinProject
 
-Фінансовий проєкт для управління особистими витратами та балансом з використанням **PostgreSQL** та **PyQt5**.
+A financial project for managing personal expenses and balance using **PostgreSQL** and **PyQt5**.
 
 ---
 
 ## 📌 Changelog
+
 ### 16.06.2026
-#### – Створення бази
-- Ініціалізація бази даних `finproject` у PostgreSQL.
-- Додано таблиці:
+#### – Database Setup
+- Initialized PostgreSQL database `finproject`.
+- Added tables:
   - `expenses` (id, category, amount, date)
   - `balance` (id, total)
 
-#### – Підключення Python
-- Налаштовано `db.py` для роботи з PostgreSQL через `psycopg2`.
-- Реалізовано функції:
-  - `add_expense()` — додавання витрати.
-  - `get_expenses()` — отримання списку витрат.
-  - `get_balance()` — отримання балансу.
+#### – Python Integration
+- Configured `db.py` to work with PostgreSQL via `psycopg2`.
+- Implemented functions:
+  - `add_expense()` — add a new expense.
+  - `get_expenses()` — retrieve expense list.
+  - `get_balance()` — retrieve current balance.
 
-#### – Інтерфейс (PyQt5)
-- Створено базове вікно з формою:
-  - Поля: Категорія, Сума, Дата.
-  - Кнопка «Зберегти витрату».
-- Додано таблицю для перегляду витрат.
-- Додано кнопку для перегляду балансу.
+#### – Interface (PyQt5)
+- Created a basic window with form:
+  - Fields: Category, Amount, Date.
+  - Button: “Save expense”.
+- Added a table to view expenses.
+- Added a button to view balance.
 
-####  – Автоматичне оновлення
-- Впроваджено `QTimer` для автооновлення даних кожні кілька секунд.
-- Таблиця витрат та баланс оновлюються без натискання кнопки.
+#### – Auto Update
+- Implemented `QTimer` for automatic data refresh every few seconds.
+- Expense table and balance update without manual action.
 
-#### – Бокове меню
-- Додано **sidebar‑меню** з різними «екранами» (canvas):
-  - Додати витрату.
-  - Переглянути витрати.
-  - Баланс.
-  - Статистика.
-- Використано `QStackedWidget` для перемикання між сторінками.
+#### – Sidebar Menu
+- Added **sidebar navigation** with multiple canvases:
+  - Add expense
+  - View expenses
+  - Balance
+  - Statistics
+- Used `QStackedWidget` for switching between pages.
 
-#### – Безпека
-- Паролі винесено у `.env` файл.
-- Додано `.gitignore`, щоб `.env` не потрапляв у GitHub.
-- Використано `python-dotenv` для завантаження конфігурації.
+#### – Security
+- Moved credentials to `.env` file.
+- Added `.gitignore` to exclude `.env` from GitHub.
+- Used `python-dotenv` for configuration loading.
 
 ---
 
-## 📌 Майбутні плани
+## 📌 Future Plans
 
-### Аналітика та візуалізація
-- Побудова графіків витрат по категоріях (matplotlib).
-- Динамічні діаграми трендів витрат за місяць/рік.
-- Візуалізація балансу та прогнозування залишку.
+### Analytics & Visualization
+- Charts for expenses by category (matplotlib).
+- Dynamic trend graphs (daily/weekly/monthly).
+- Balance visualization and forecasting.
 
-### Експорт та інтеграції
-- Експорт даних у CSV, XLSX та PDF.
-- Інтеграція з Google Sheets для синхронізації.
-- API‑інтерфейс для мобільних або веб‑клієнтів.
+### Export & Integrations
+- Export data to CSV, XLSX, PDF.
+- Integration with Google Sheets.
+- REST API for mobile/web clients.
 
-### Розширена статистика
-- Топ‑категорії витрат.
-- Середні витрати на день/тиждень/місяць.
-- Порівняння витрат між періодами.
+### Extended Statistics
+- Top expense categories with percentages.
+- Average expenses per day/week/month.
+- Period comparison and anomaly detection.
 
-### Користувацькі функції
-- Авторизація користувачів (логін/пароль).
-- Підтримка кількох профілів (сімейний бюджет).
-- Налаштування валют та курсів обміну.
+### User Features
+- User authentication (login/password).
+- Multiple profiles (family budget).
+- Role management (admin, member).
+- Currency and exchange rate settings.
 
-### Інтерфейс
-- Оновлення поточного вигляду інтерфейсу в стилі Cybertech
-- Темна/світла тема.
-- Адаптація під мобільні екрани.
-- Бокове меню з додатковими модулями (інвестиції, доходи).
+### Interface
+- Update design to **Cybertech style**.
+- Dark/light theme support.
+- Mobile screen adaptation.
+- Sidebar with additional modules (income, investments).
+- Drag‑and‑drop CSV import.
 
-### Автоматизація
-- Автоматичне оновлення балансу при додаванні витрат.
-- Нагадування про регулярні платежі.
-- Планування бюджету з попередженням про перевищення ліміту.
+### Automation
+- Auto balance update when adding expenses.
+- Reminders for recurring payments.
+- Budget planning with overspending alerts.
+- Push notifications for important changes.
 
-### Інтеграція з фінансовими сервісами (Maybe)
-- Підключення до банківських API для імпорту транзакцій.
-- Синхронізація з платіжними системами (PayPal, Revolut).
-- Модуль для інвестиційного портфеля.
+### Financial Services Integration
+- Connect to banking APIs for transaction import.
+- Sync with payment systems (PayPal, Revolut, Monobank).
+- Investment portfolio module (stocks, crypto).
+- Automatic currency rate updates.
